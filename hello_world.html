@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <body>
-      <script>
-        document.write("<h1>This is a heading</h1>")
-        document.write("<h2>hello world<h2>")
-      </script>
+      <p id="demo">Hello JavaScript！</p>
+      <button type="button" onclick="myFunction()">开始</button>
+      <input type="button" value="隐藏文本" onclick="document.getElementById('demo').style.visibility='hidden'" />
+      <input type="button" value="显示文本" onclick="document.getElementById('demo').style.visibility='visible'" />
+      <script src="hello_world.js"></script>
   </body>
 </html>

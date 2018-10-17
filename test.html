@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <script>
+            var text="";
+            function message()
+            {
+                try
+                    {
+                        adddlert("welcome")
+                    }
+                catch(err)
+                    {
+                        text="本页有一个错误。\n\n";
+                        text += "错误描述： " + err.message + "\n\n";
+                        text+="点击确定继续。\n\n";
+                        alert(text);
+                    }
+            }
+        </script>
+    </header>
+
+    <body>
+        <input type="button" value="查看消息" onclick="message()" />
+    </body>
+</html>

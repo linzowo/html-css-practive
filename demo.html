@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 onclick="changeText(this)" >我的主页（点击此处查看本页主要目的）</h1>
+        <p><b>请输入5-10之间的数字：</b></p>
+        <input type="text" id="input_num" >
+        <button type="button" onclick="checkFunction()">开始检查</button>
+        <p id="mess"></p>
+
+        <script>
+        function checkFunction()
+        {
+            try
+            {
+                var x=document.getElementById("input_num").value;
+                if(x=="")    throw "值不能为空";
+                if(isNaN(x))    throw "你输入的不是一个数字";
+                if(x>10)    throw "值太大";
+                if(x<5)     throw "值太小";
+                if(5<=x<=10)    throw "没有"
+            }
+            catch(err)
+            {
+                var y=document.getElementById("mess");
+                y.innerHTML="错误： " + err + "。";
+            }
+        }
+
+        function changeText(id)
+        {
+            id.innerHTML="关于测试函数try的练习"
+        }
+        </script>
+    </body>
+</html>
