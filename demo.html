@@ -1,35 +1,120 @@
 <!DOCTYPE html>
 <html>
-    <body>
+    <header>
+        <h1>这是头部</h1>
+    </header>
+    <body onload="checkCookies()">
         <h1 onclick="changeText(this)" >我的主页（点击此处查看本页主要目的）</h1>
         <p><b>请输入5-10之间的数字：</b></p>
         <input type="text" id="input_num" >
-        <button type="button" onclick="checkFunction()">开始检查</button>
         <p id="mess"></p>
+        <button type="button" id="but">开始检查</button>
+        <p>当光标离开编辑框时将字母变成大写</p>
+        <input type="text" id="text1" onchange="upLetter()">
+
+        <div onmouseover="mOver(this)" onmouseout="mOut(this)" onmousedown="mDown(this)" onmouseup="mUp(this)" 
+        style="background-color:darkseagreen;width:120px;height:20px;padding:40px;color:#ffffff;">
+        把鼠标移动到上面</div>
+        <div id="div1">
+            <p id="p1">第一个段落</p>
+            <p id="p2">第二个段落</p>
+        </div>
+        <input type="button" onclick="addText()" value="增加段落" />
+        <input type="button" onclick="removeText()" value="删除段落" />
 
         <script>
-        function checkFunction()
-        {
-            try
-            {
-                var x=document.getElementById("input_num").value;
-                if(x=="")    throw "值不能为空";
-                if(isNaN(x))    throw "你输入的不是一个数字";
-                if(x>10)    throw "值太大";
-                if(x<5)     throw "值太小";
-                if(5<=x<=10)    throw "没有"
-            }
-            catch(err)
-            {
-                var y=document.getElementById("mess");
-                y.innerHTML="错误： " + err + "。";
-            }
-        }
+            var i=0;  //记录增加了几个段落
+            var text="";  //段落内新增文本
 
-        function changeText(id)
-        {
-            id.innerHTML="关于测试函数try的练习"
-        }
+            document.getElementById("but").onclick=function() {checkFunction()};
+            function checkFunction()
+            {
+                try
+                {
+                    var x=document.getElementById("input_num").value;
+                    if(x=="")    throw "值不能为空";
+                    if(isNaN(x))    throw "你输入的不是一个数字";
+                    if(x>10)    throw "值太大";
+                    if(x<5)     throw "值太小";
+                    if(5<=x<=10)    throw "没有";
+                }
+                catch(err)
+                {
+                    var y=document.getElementById("mess");
+                    y.innerHTML="错误： " + err + "。";
+                }
+            }
+
+            function changeText(id)
+            {
+                id.innerHTML="关于测试函数try的练习"
+            }
+
+            function checkCookies()
+            {
+                if(navigator.cookieEnabled==true)
+                    {
+                        alert("已启用 cookie")
+                    }
+                else
+                    {
+                        alert("未启用 cookie")
+                    }
+            }
+
+            function upLetter()
+            {
+                var x=document.getElementById("text1");
+                x.value=x.value.toUpperCase();
+            }
+
+            function mOver(obj)
+            {
+                obj.innerHTML="没想到吧"
+            }
+
+            function mOut(obj)
+            {
+                obj.innerHTML="你快回来"
+            }
+
+            function mDown(obj)
+            {
+                obj.innerHTML="别按了"
+            }
+
+            function mUp(obj)
+            {
+                obj.innerHTML="骗你的"
+            }
+
+            function addText()
+            {
+                try
+                {
+                var para=document.createElement("p");  //每次运行创建一个新的段落
+                var element=document.getElementById("div1")
+                i++;
+                para.id="p"+ (i + 2)
+                text= "新增第" + i + "个段落";
+                var node=document.createTextNode(text);
+                para.appendChild(node);
+                element.appendChild(para);
+                }
+                catch(err)
+                {
+                    alert(err)
+                }
+            }
+
+            function removeText()
+            {
+                var element=document.getElementById("div1");
+                p_id= String("p" + (i+2));
+                i--;
+                var para=document.getElementById(p_id);
+                element.removeChild(para);
+            }
         </script>
     </body>
 </html>
