@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScripts Loan Calculator</title>
+        <style>
+            .outpt{font-weight:bold;} /*样式为粗体*/
+            #payment{text-decoration:underline;} /*定义id="payment"的元素样式*/
+            #graph{border:solid black 1px;}/* 图像有一个1像素的边框*/
+            th,td{vertical-align:top}/*表格单元格的对齐方式为顶端对齐*/
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Enter Loan Data:</th>
+                <td></td>
+                <th>Loan Blance,Cumulative Equity, and Interest Payments</th></tr>
+            <tr>
+                <td>Amount of Loan ($)</td>
+                <td><input id="amount" onchange="caculate();"> </td>
+                <td rowspan=8>
+                    <canvas id="graph" width="400" height="250"></canvas></td></tr>
+            <tr>
+                <td>Annual interest (%):</td>
+                <td><input id="apr" onchange="caculate();"></td></tr>
+            <tr>
+                <td>Repayment period (years):</td>
+                <td><input id="years" onchange="caculate();"></td></tr>
+            <tr>
+                <td>Zipcode (to finder lenders):</td>
+                <td><input id="zipcode" onchange="caculate();"></td></tr>
+            <tr>
+                <th>Approximate payments:</th>
+                <td><button onclick="caculate();">Caculate</button></td></tr>
+            <tr>
+                <td>Monthly payment:</td>
+                <td>$<span class="output" id="payment"></span></td></tr>
+            <tr>
+                <td>Total paymment:</td>
+                <td>$<span class="output" id="total"></span></td></tr>
+            <tr>
+                <td>Total interest:</td>
+                <td>$<span class="output" id="totalinterest"></span></td></tr>
+            <tr>
+                <th>Sponsors:</th><td colspan=2>
+                    Apply for your loan with one of these fine lenders:
+                    <div id="lendders"></div></td></tr>
+        </table>
+    </body>
+</html>
