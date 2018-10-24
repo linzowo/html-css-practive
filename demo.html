@@ -2,29 +2,50 @@
 <html>
     <header>
         <h1>这是头部</h1>
+        <!--检查窗口尺寸-->
+        <p id="window_size"></p>
     </header>
     <body onload="checkCookies()">
-        <h1 onclick="changeText(this)" >我的主页（点击此处查看本页主要目的）</h1>
-        <p><b>请输入5-10之间的数字：</b></p>
-        <input type="text" id="input_num" >
+        <h1 name="txt" onclick="changeText(this)" >我的主页（点击此处查看本页主要目的）</h1>
+        <p name="txt"><b>请输入5-10之间的数字：</b></p>
+        <input  name="txt" type="text" id="input_num" >
         <p id="mess"></p>
-        <button type="button" id="but">开始检查</button>
+        <button  name="txt" type="button" id="but">开始检查</button>
         <p>当光标离开编辑框时将字母变成大写</p>
-        <input type="text" id="text1" onchange="upLetter()">
+        <input  name="txt" type="text" id="text1" onchange="upLetter()">
 
-        <div onmouseover="mOver(this)" onmouseout="mOut(this)" onmousedown="mDown(this)" onmouseup="mUp(this)" 
+        <div  name="txt" onmouseover="mOver(this)" onmouseout="mOut(this)" onmousedown="mDown(this)" onmouseup="mUp(this)" 
         style="background-color:darkseagreen;width:120px;height:20px;padding:40px;color:#ffffff;">
-        把鼠标移动到上面</div>
+        想知道我有多少车吗？那就按上来。</div>
         <div id="div1">
-            <p id="p1">第一个段落</p>
-            <p id="p2">第二个段落</p>
+            <p  name="txt" id="p1">第一个段落</p>
+            <p  name="txt" id="p2">第二个段落</p>
         </div>
-        <input type="button" onclick="addText()" value="增加段落" />
-        <input type="button" onclick="removeText()" value="删除段落" />
-
+        <input  name="txt" type="button" onclick="addText()" value="增加段落" />
+        <input  name="txt" type="button" onclick="removeText()" value="删除段落" />
+        <p>输入你想查找的文本</p>
+        <input type="text" id="check_text" size="30" />
+        <p id="p_all_text"></p>
+        <input  name="txt" type="button" onclick="checkText()" value="输出所以文本" />
+        
         <script>
+            var myCars = new Array()
+            myCars[0] = "BMW"
+            myCars[1] = "Volvo"
+            myCars[2] = "Audi"
             var i=0;  //记录增加了几个段落
             var text="";  //段落内新增文本
+
+            //输出window的长宽
+            var w=window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+            var h=window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientHeight
+
+            ws=document.getElementById("window_size")
+            ws.innerHTML = "浏览器的内部窗口宽度："+ w + "高度：" + h
 
             document.getElementById("but").onclick=function() {checkFunction()};
             function checkFunction()
@@ -70,22 +91,29 @@
 
             function mOver(obj)
             {
-                obj.innerHTML="没想到吧"
+                obj.innerHTML="不按怎么知道"
             }
 
             function mOut(obj)
             {
-                obj.innerHTML="你快回来"
+                obj.innerHTML="想知道我有多少车吗？那就按上来。"
             }
 
             function mDown(obj)
             {
-                obj.innerHTML="别按了"
+                obj.innerHTML = myCars.sort()
+                //obj.innerHTML = myCars.join("<br />")
+                /*text = ""
+                for (x in myCars)
+                {
+                    text += (myCars[x] + "<br />")
+                }
+                obj.innerHTML = text*/
             }
 
             function mUp(obj)
             {
-                obj.innerHTML="骗你的"
+                obj.innerHTML="是不是感到震惊"
             }
 
             function addText()
@@ -114,6 +142,44 @@
                 i--;
                 var para=document.getElementById(p_id);
                 element.removeChild(para);
+            }
+
+            function checkText()
+            {
+                //获取页面内的大部分文本
+                //找到这些文本中的某些特殊字符
+                try
+                {
+                    var items = document.getElementsByName("txt");
+                    var para = document.getElementById("p_all_text");
+                    var txt = "";
+                    var need = document.getElementById("check_text").value;
+                    var find = new RegExp(need,"g");
+                    var all_result = "";
+                    for (var i=0; i<items.length;i++)
+                    {
+                        txt += items[i].value;
+                    }
+                    do
+                    {
+                        result = find.exec(txt);
+                        all_result += result;
+                    }
+                    while (result != null);
+                    if (all_result == "null")
+                    {
+                        all_result = "没有找到这个文本";
+                        para.innerHTML = all_result;
+                    }
+                    else
+                    {
+                        para.innerHTML = all_result;
+                    }
+                }
+                catch(err)
+                {
+                    alert(err);
+                }
             }
         </script>
     </body>

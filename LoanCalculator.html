@@ -46,5 +46,74 @@
                     Apply for your loan with one of these fine lenders:
                     <div id="lendders"></div></td></tr>
         </table>
+        <script>
+        "use strict";
+        function caculate(){
+            //查找文档中用于输入输出的元素
+            var amount = document.getElementById("amount");
+            var apr = document.getElementById("apr");
+            var years = document.getElementById("years");
+            var zipcode = document.getElementById("zipcode")
+            var payment = document.getElementById("payment");
+            var total = document.getElementById("total");
+            var totalinterest = document.getElementById("totalinterest");
+
+            //假如所有的输入都是合法的，将从input中获取输入数据
+            //将百分比格式转换为小数格式，并从年利率转换为月利率
+            //将年度赔付转换为月度赔付
+            var principal = parseFloat(amount.Value);
+            var interest = parseFloat(apr.Value)/100/12;
+            var payments = parseFloat(years.Value) * 12;
+
+            //现在计算月度赔付的数据
+            var x = Math.pow(1 + interest,payments); //Math.pow 进行幂次运算
+            var monthly = (principal * x * interest) / (x - 1);
+
+            //如果没有超出JavaScript的能表示的数字范畴，且用户输入也正确
+            //这里所展示的结果就是合法的
+            if(isFinite(monthly)){
+                //将数据填充到输出字段的位置，四舍五入小数点后的两位数字
+                payment.innerHTML = monthly.toFixed(2);
+                total.innerHTML = (monthly * payments).toFixed(2);
+                totalinterest.innerHTML = ((monthly * payments) - principal).toFixed(2);
+
+                //将用户的输入数据保存下来，这样下次访问的时候也能去到数据
+                save(amount.Value,apr.Value,years.Value,zipcode.Value);
+
+                //找到并展示本地放贷人，但忽略网络错误
+                try {
+                    getLenders(amount.Value,apr.Value,years.Value,zipcode.Value);
+                }
+                catch(e){/*忽略这个异常*/}
+
+                //最后用图表展示贷款余额/利息和资产情况
+                chart(principal,interest,monthly,payments);
+            }
+            else{
+                //计算结果不是数字或者无穷大，意味着输入数据不合法或者不完整
+                //清空输入的数据
+                payment.innerHTML = "";
+                total.innerHTML = "";
+                totalinterest.innerHTML = "";
+                chart();
+            }
+        }
+
+        //将用户的输入保存到localstorage对象的属性中
+        //这些属性在再次访问时还会继续保持在原位置
+        //如果你在浏览器中按照file：//url的方式直接打开本地文件，
+        //则无法在某些浏览器中使用存储功能
+        //通过http打开文件是可行的
+        function save(amount,apr,years,zipcode){
+            if (window.localStorage){//只有在浏览器支持的时候才运行代码
+                localStorage.loan_amount = amount;
+                localStorage.loan_apr = apr;
+                localStorage.loan_years = years;
+                localStorage.loan_zipcode = zipcode;
+            }
+        }
+
+        //在首次文档加载时，将会尝试还原输入字段
+        </script>
     </body>
 </html>
