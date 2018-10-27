@@ -17,21 +17,21 @@
                 <th>Loan Blance,Cumulative Equity, and Interest Payments</th></tr>
             <tr>
                 <td>Amount of Loan ($)</td>
-                <td><input id="amount" onchange="caculate();"> </td>
+                <td><input id="amount" onchange="calculate();"> </td>
                 <td rowspan=8>
                     <canvas id="graph" width="400" height="250"></canvas></td></tr>
             <tr>
                 <td>Annual interest (%):</td>
-                <td><input id="apr" onchange="caculate();"></td></tr>
+                <td><input id="apr" onchange="calculate();"></td></tr>
             <tr>
                 <td>Repayment period (years):</td>
-                <td><input id="years" onchange="caculate();"></td></tr>
+                <td><input id="years" onchange="calculate();"></td></tr>
             <tr>
                 <td>Zipcode (to finder lenders):</td>
-                <td><input id="zipcode" onchange="caculate();"></td></tr>
+                <td><input id="zipcode" onchange="calculate();"></td></tr>
             <tr>
                 <th>Approximate payments:</th>
-                <td><button onclick="caculate();">Caculate</button></td></tr>
+                <td><button onclick="calculate();">Calculate</button></td></tr>
             <tr>
                 <td>Monthly payment:</td>
                 <td>$<span class="output" id="payment"></span></td></tr>
@@ -48,7 +48,7 @@
         </table>
         <script>
         "use strict";
-        function caculate(){
+        function calculate(){
             //查找文档中用于输入输出的元素
             var amount = document.getElementById("amount");
             var apr = document.getElementById("apr");
@@ -137,7 +137,7 @@
             var url = "getLenders.php" +                //处理数据的url地址
             "?amt=" + encodeURIComponent(amount) +      //使用查询串中的数据
                 "&apr=" + encodeURIComponent(apr) +
-                "&yrs=" + encodeuricomponent(years) +
+                "&yrs=" + encodeURIComponent(years) +
                 "&zip=" + encodeURIComponent(zipcdoe);
 
             //通过XMLHttpRequest对象来提取返回的数据
