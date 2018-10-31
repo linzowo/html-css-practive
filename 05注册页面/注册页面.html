@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎注册</title>
+    <style>
+        table {/* 让所有的内容居中显示 */
+            margin: auto;
+            line-height: 24px; /* 设置行间距让效果看起来更舒服 */
+            width : 50%; /* 设置列之间的宽度 */ 
+        }
+        select {
+            width: 10%; /* 下拉菜单的宽度 */
+        }
+        .c {
+            color:pink;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption class="c">青春不常在，抓紧谈恋爱</caption>
+        <tr>
+            <td>性别</td>
+            <td>
+                男：<input type="radio" name="sex" checked="checked" />
+                女：<input type="radio" name="sex" />
+            </td>
+        </tr>
+        <tr>
+            <td>生日</td>
+            <td>
+                <select name="bd" id="year">
+                    <option value="1">1</option>
+                    <option value="1">2</option>
+                    <option value="1">13</option>
+                    <option value="1">14</option>
+                    <option value="1">15</option>
+                </select>
+                <select name="bd" id="mouth">
+                    <option value="1">1</option>
+                    <option value="1">2</option>
+                    <option value="1">13</option>
+                    <option value="1">14</option>
+                    <option value="1">15</option>
+                </select>
+                <select name="bd" id="day">
+                    <option value="1">1</option>
+                    <option value="1">2</option>
+                    <option value="1">13</option>
+                    <option value="1">14</option>
+                    <option value="1">15</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>所在地区</td>
+            <td><input type="text" value="beijing" /></td>
+        </tr>
+        <tr>
+            <td>婚姻状况</td>
+            <td>
+                未婚：<input type="radio" checked="checked" name="wedding" />
+                离婚：<input type="radio" name="wedding" />
+                丧偶：<input type="radio" name="wedding" />
+            </td>
+        </tr>
+        <tr>
+            <td>学历</td>
+            <td><input type="text" /></td>
+        </tr>
+        <tr>
+            <td>月薪</td>
+            <td><input type="text" /></td>
+        </tr>
+        <tr>
+            <td>手机号</td>
+            <td><input type="text" /></td>
+        </tr>
+        <tr>
+            <td>昵称</td>
+            <td><input type="text" /></td>
+        </tr>
+        <tr>
+            <td>喜欢类型</td>
+            <td>
+                女<input type="checkbox" name="love" />
+                女<input type="checkbox" name="love" />
+                女<input type="checkbox" name="love" />
+                女<input type="checkbox" name="love" />
+                女<input type="checkbox" name="love" />
+            </td>
+        </tr>
+        <tr>
+            <td>自我介绍</td>
+            <td><textarea name="my" id="" cols="50" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="image" src="img/注册按钮.png">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="checkbox" name="tk" /> 我同意注册条款</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="#">我是会员立即登陆</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <ul>
+                    <li>我承诺</li>
+                    <li>我是好人</li>
+                    <li>我是好人</li>
+                    <li>我是好人</li>
+                    <li>我是好人</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
