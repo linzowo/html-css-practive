@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类导航栏</title>
+    <style>
+    .nav {
+        text-align: center;  /* 让nav内部的盒子居中 */
+    }
+    a {
+        height: 70px;
+        width: 150px;  /* 背景图片的宽高会随盒子大小变化 */
+        color: #000;
+        text-align: center;
+        text-decoration: none;  /* 设置是否保留下划线 */
+        font: 700 25px/70px "宋体"; /* 连写的格式规范是 style weight size/line-height family */
+        display: inline-block;
+        background-image: url(bg.jpg);
+    }
+    a:hover {  /* 伪类链接 当鼠标经过的时候改变颜色 */
+        background-image: url(bgc.jpg);
+    }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#">网站页面</a>
+        <a href="#">网站页面</a>
+        <a href="#">网站页面</a>
+        <a href="#">网站页面</a>
+        <a href="#">网站页面</a>
+        <a href="#">网站页面</a>
+    </div>
+</body>
+</html>

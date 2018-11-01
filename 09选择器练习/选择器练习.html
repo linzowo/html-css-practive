@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>各种选择器</title>
+    <style>
+    /* 需求1 设置 h1 div a的颜色为黄色 */
+    /* h1,div,a { 并集选择器
+        color: red;
+    } */
+    /* p.a{ 交集选择器
+        color:pink;
+    } */
+    /* div p{ 后代选择器
+        color: skyblue;
+    } */
+    div>p{ /* 子代选择器 */
+        color: sandybrown;
+    }
+    </style>
+</head>
+<body>
+    <h1>各种类型的标签</h1>
+    <div>
+        <p>各种类型的标签</p>
+        <ul>
+            <li>
+                <p>各种类型的标签</p>
+            </li>
+        </ul>
+    </div>
+    <span>各种类型的标签</span>
+    <p class="a">各种类型的标签</p>
+    <p>各种类型的标签</p>
+    <p>各种类型的标签</p>
+    <p class="a">各种类型的标签</p>
+    <em>各种类型的标签</em>
+    <a href="#">各种类型的标签</a>
+</body>
+</html>
