@@ -11,7 +11,8 @@
     通过使用外边距的方式解决了这个问题
     参考了 官网的写法后 我决定做一个与官网布局一致 方法大致相同的页面   
     通过这个练习发现 inline-block 与 block 显示模式之间 在对齐方式上有一点区别
-    在设置大型盒子时还是尽量使用block方便一点。-->
+    在设置大型盒子时还是尽量使用block方便一点。
+    2018年11月4日 23:28:31 添加了导航栏图片及导航栏文字但是整体的效果还没有出来只是将大致区域确定了-->
 
     <style>
     /* div {
@@ -25,12 +26,41 @@
     body {
         background-color: #000;
     }
-    .nav {
+    div.comm-head {  /* 整个头部区域 */
         height: 78px;
+        width: 100%;
         background-color: #000;
+        display: block;
+        /* position: relative;
+        top: 0;
+        left: 0;
+        z-index: 11; */
+        /* padding: 10px;  使用内边距控制logo在导航栏的相对位置，但是需要减去相应的高度，这里是减去20px */
+    }
+    ul.nav {  /* 装导航栏文字的盒子 */
+        height: 78px;
+        width: 746.9px;
+        display: inline-block;
+        font: 700 16px/39px "宋体";
+        font-style: #fff;
+    }
+    .nav li { /* 控制装导航栏文字的盒子 */
         display: inline-block;
     }
-    .bg {
+    .nav a { /* 控制导航栏的文本  把层级放到a的下面的时候修改的效果并不能生效。*/
+        color: #fff;
+        text-decoration: none;
+    }
+    div.logo {
+        width: 132px;
+        height: 49px;
+        background: #000 url(images/logo.png) no-repeat 50% 0;
+        margin-top: 14.5px;
+        /* overflow: hidden;  这个在padding中使用才有效果margin中使用作用不明显*/  
+        display: inline-block;
+        /* background-color: #fff; */
+    }
+    div.bg {
         /* background-image: url(images/bg.jpg); 设置背景图片*/
         /* 将图像位置设置为 背景颜色为黑色 随元素移动滚动 水平居中 垂直下移78像素 */
         /* width: 1920px;
@@ -38,7 +68,7 @@
         background: #000 url(images/bg.jpg) no-repeat scroll 50% 0;
         display: block;
     }
-    .bgc {
+    div.bgc {
         /* 设置中间空缺部分图片 */
         height: 870px;
         width: 1000px;
@@ -50,7 +80,40 @@
     </style>
 </head>
 <body>
-    <div class="nav">我是导航栏</div>
+    <div class="comm-head">
+        <div class="logo"></div>
+        <ul class="nav">
+            <li>
+                <a href="#">
+                    <span class="head-nav-title">游戏资料</span> <br />
+                    <span class="head-nav-subtitle">GAME INFO</span>
+                </a>
+            </li>
+            <li><a href="#">
+                    <span class="head-nav-title">商城/合作</span><br />
+                    <span class="head-nav-subtitle">STORE</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="head-nav-title">社区互动</span><br />
+                    <span class="head-nav-subtitle">COMMUNITY</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="head-nav-title">赛事官网</span><br />
+                    <span class="head-nav-subtitle">ESPORTS</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="head-nav-title">自助系统</span><br />
+                    <span class="head-nav-subtitle">SYSTEM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
     <div class="bg">
         <div class="bgc">我是中间图片
             <p>英雄联盟</p>
