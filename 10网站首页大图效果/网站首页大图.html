@@ -31,6 +31,7 @@
         width: 100%;
         background-color: #000;
         display: block;
+        /* line-height: 78px; */
         /* position: relative;
         top: 0;
         left: 0;
@@ -38,29 +39,47 @@
         /* padding: 10px;  使用内边距控制logo在导航栏的相对位置，但是需要减去相应的高度，这里是减去20px */
     }
     ul.nav {  /* 装导航栏文字的盒子 */
-        height: 78px;
+        height: 68px;
         width: 746.9px;
-        display: inline-block;
-        font: 700 16px/39px "宋体";
-        font-style: #fff;
+        margin: 0;
+        display: inline-block;              /* 让文字能够在一行显示 */
+        font:12px/1.5 tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif;   /* 因为整个文字是分成两行的所以行高我应该在这个里面控制 */
+        margin-left: 20px;                  /* 让中间的导航栏距离logo有50px远 */
+        text-align: center;                 /* 让文字在盒子中居中 */
+        /* padding-top: 16px;                  让文字垂直居中 */
     }
     .nav li { /* 控制装导航栏文字的盒子 */
+        width: 18%;
+        list-style: none;
         display: inline-block;
+        /* line-height: -1px;  使用行高控制文字靠拢无效 */
     }
-    .nav a { /* 控制导航栏的文本  把层级放到a的下面的时候修改的效果并不能生效。*/
+    .nav a { /* 控制导航栏的文本  把层级放到a的下面的时候修改的效果并不能生效。 */
         color: #fff;
-        text-decoration: none;
+        text-decoration: none; 
     }
-    div.logo {
-        width: 132px;
-        height: 49px;
-        background: #000 url(images/logo.png) no-repeat 50% 0;
-        margin-top: 14.5px;
-        /* overflow: hidden;  这个在padding中使用才有效果margin中使用作用不明显*/  
+    ul .head-nav-title { /* 导航栏内上方文字 */
         display: inline-block;
+        font-size: 18px;
+        /* padding-top: 10px; */
+        /* margin-bottom: -1px;  使下方文字向上移动无效 */
+    }
+    ul .head-nav-subtitle { /* 导航栏下方文字 */
+        font-size: 11px;
+        color: #aeaeae;
+        display: inline-block;
+        /* margin-top: -1px;  使文字向上移动无效 */
+    }
+    div.logo { /* 左上角logo图片 */
+        width: 132px;
+        height: 59px;
+        background: #000 url(images/logo.png) no-repeat 50% 14.5px;
+        display: inline-block;
+        /* margin-left: auto; 这个在设置中不起作用 */
+        /* overflow: hidden;  这个在padding中使用才有效果margin中使用作用不明显*/  
         /* background-color: #fff; */
     }
-    div.bg {
+    div.bg {  
         /* background-image: url(images/bg.jpg); 设置背景图片*/
         /* 将图像位置设置为 背景颜色为黑色 随元素移动滚动 水平居中 垂直下移78像素 */
         /* width: 1920px;
