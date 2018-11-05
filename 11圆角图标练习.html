@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 这是一个关于border-radius的练习 -->
+    <meta charset="UTF-8">
+    <title>圆角图标</title>
+    <style>
+    body { /* 整个页面 */
+        background-color: #ccc;
+    }
+    div { /* 装连接的盒子 */
+        text-align: center;
+        margin-top: 100px;
+    }
+    div a{ /* 每个连接的盒子 */
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        background-color: #fff;
+        color: red;
+        text-decoration: none;
+        font: 700 24px/150px tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif;
+        border-radius: 50%;  /* 使正方形盒子变成圆形 */
+        margin: 10px; 
+    }
+    div a:hover {  /* 当鼠标经过时的样子 */
+        color: #fff;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">文字</a>
+        <a href="#">文字</a>
+        <a href="#">文字</a>
+        <a href="#">文字</a>
+        <a href="#">文字</a>
+    </div>
+</body>
+</html>
