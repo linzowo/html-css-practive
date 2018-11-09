@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>英雄联盟</title>
+    <style>
+    /* 初始化css */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 头部导航栏开始 */
+        /* 通栏背景 */
+    .head_father {
+        height: 78px;
+        background-color: #000;
+    }
+        /* 放logo和nav的盒子 */
+    .head_father .comm-head { 
+        background-color: #000;
+        height: 78px;
+        width: 1358px;
+        margin: 0 auto;
+    }
+        /* logo盒子 */
+    .comm-head .logo {
+        height: 49px;
+        width: 132px;
+        background-color: #eee;
+        float: left;
+        margin-left: auto;
+        background: url(images/logo.png);
+        margin-top: 14.5px;
+    }
+        /* nav盒子 */
+    .comm-head .nav {
+        height: 78px;
+        /* background-color: #ccc; */
+        float: left;
+    }
+        /* 放导航栏内连接的盒子 */
+    .nav_link li {
+        float: left;
+        list-style: none;
+        text-align: center;
+        margin-left: 90px;
+        margin-top: 14px;
+        font: 12px/1.5 tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif;
+    }
+        /* 导航栏内连接 */
+    .nav_link a {
+        /* font: 12px/1.5 tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif; */
+        text-decoration: none;
+        color: #fff;
+    }
+        /* 连接内在上面的文字 */
+    .nav_link .head-nav-title {
+        font-size: 18px;
+    }
+        /* 连接内在下面的文字 */
+    .nav_link .head-nav-subtitle {
+        font-size: 11px;
+    }
+    /* 头部导航栏结束 */
+    .bg {
+        width: 1920px;
+        height: 870px;
+        background: #000 url(images/bg.jpg) no-repeat 50% 0;
+        margin: 0 auto;
+    }
+    .bgc {
+        width: 1000px;
+        height: 870px;
+        background: #000 url(images/bgc.jpg) no-repeat 50% 0;
+        margin: 0 auto;
+    }
+    </style>
+</head>
+<body>
+    <!-- 头部开始 -->
+    <div class="head_father">
+        <div class="comm-head">
+            <div class="logo"></div>
+            <div class="nav">
+                <ul class="nav_link">
+                    <li><a href="#"><span class="head-nav-title">游戏资料</span> <br /> <span class="head-nav-subtitle">GAME INFO</span></a></li>
+                    <li><a href="#"><span class="head-nav-title">商城/合作</span> <br /> <span class="head-nav-subtitle">STORE</span></a></li>
+                    <li><a href="#"><span class="head-nav-title">社区互动</span> <br /> <span class="head-nav-subtitle">COMMUNITY</span></a></li>
+                    <li><a href="#"><span class="head-nav-title">赛事官网</span> <br /> <span class="head-nav-subtitle">ESPORTS</span></a></li>
+                    <li><a href="#"><span class="head-nav-title">自助系统</span> <br /> <span class="head-nav-subtitle">SYSTEM</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 头部结束 -->
+
+    <!-- 主体开始 -->
+    <div class="bg">
+        <div class="bgc"></div>
+    </div>
+    <!-- 主体结束 -->
+</body>
+</html>
