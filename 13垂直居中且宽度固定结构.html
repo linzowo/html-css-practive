@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 当只指定高度和颜色的时候整体的效果并没有出来 
+    并不是效果没有出来而是我给的内容的颜色而不是背景色
+    某一些公共属性可以写在一起-->
+    <meta charset="UTF-8">
+    <title>一列固定宽度且居中</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .top,
+    .banner,
+    .main,
+    .footer {
+        height: 80px;
+        width: 900px;
+        margin: 5px auto;
+        border: 1px dashed #ccc;
+    }
+    .top {
+        height: 80px;
+        /* width: 900px; */
+        background-color: rgb(208, 226, 46);
+    }
+    .banner {
+        height: 200px;
+        /* width: 900px; */
+        background-color: #eee;
+    }
+    .main {
+        /* width: 900px; */
+        height: 500px;
+        background-color: skyblue;
+    }
+    .footer {
+        /* width: 900px; */
+        height: 200px;
+        background-color: #000;
+    }
+    </style>
+</head>
+<body>
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="main">main</div>
+    <div class="footer">footer</div>
+</body>
+</html>

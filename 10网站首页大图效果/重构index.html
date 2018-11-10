@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <!-- 
+    再次检查发现中间的bg盒子无法居中
+    因为设置了宽度导致bg盒子位置随着页面缩放而变化，且图片无法呈现居中效果 
+    如果要将有宽度的盒子居中显示，现在能想到的办法就是在它的外层再加一个父盒子 2018年11月10日 21:59:12
+    -->
     <meta charset="UTF-8">
     <title>英雄联盟</title>
     <style>
@@ -64,8 +68,8 @@
     }
     /* 头部导航栏结束 */
     .bg {
-        width: 1920px;
-        height: 870px;
+        /* width: 1920px; */
+        height: 1000px;
         background: #000 url(images/bg.jpg) no-repeat 50% 0;
         margin: 0 auto;
     }

@@ -1,0 +1,15 @@
+/* 初始化CSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 头部开始 */
+.nav_hd {
+    height: 35px;
+    background-color: #113C62;
+}
+.nav_bd {
+    height: 90px;
+    border-color: #FFFFFF;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左窄右宽型结构</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .top,
+    .banner,
+    .main,
+    .footer {
+        width: 900px;
+        margin: 5px auto;
+        border: 1px dashed red;
+    }
+    .top {
+        height: 80px;
+        background-color: #aeaeae;
+    }
+    .banner {
+        height: 80px;
+        background-color: #333;
+    }
+    .main {
+        height: 500px;
+        background-color: #aeaeae;
+    }
+    .footer {
+        height: 80px;
+        background-color: #333;
+    }
+    .left,
+    .right {
+        height: 400px;
+        float: left;
+        margin-top: 50px;
+        margin-left: 33px;
+    }
+    .left {
+        /* height: 300px; */
+        width: 200px; 
+        background-color: yellow;
+    }
+    .right {
+        /* height: 300px; */
+        width: 600px;
+        background-color: pink;
+    }
+    </style>
+</head>
+<body>
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="main">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+</html>
