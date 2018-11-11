@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言框</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .father,
+    .title,
+    textarea,
+    input,
+    p {
+        margin-left: 50px;
+    }
+    .father {
+        width: 900px;
+        height: 500px;
+        background-color: #fff;
+        border: 1px solid #333333;
+        margin: 100px auto;
+    }
+    /* 头部开始 */
+    .title {
+        font: 700 18px "宋体";
+        padding-top: 50px;
+        height: 40px;
+    }
+    .title a {
+        font-weight: normal;
+        color: red;
+    }
+    /* 头部结束 */
+    /* 文本域开始 */
+    textarea {
+        width: 780px;
+        height: 280px;
+        color: #ccc;
+        padding: 10px;
+    }
+    /* 文本域结束 */
+    /* 页脚开始 */
+    div p {
+        color: red;
+        font-size: 14px;
+        padding: 10px;
+    }
+    /* 页脚结束 */
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="title">评论<img src="images/star.png" /><a href="#">我要打分</a></div>
+        <textarea>请输出你想要说的话</textarea>
+        <input type="image" src="images/btn.png" />
+        <p>暂时没有评论</p>
+    </div>
+</body>
+</html>
