@@ -1,3 +1,6 @@
+/* 
+    不管是左浮动还是右浮动永远是第一个元素在最边上，后面元素依次更上
+*/
 /* 初始化CSS */
 * {
     margin: 0;
@@ -12,4 +15,24 @@
 .nav_bd {
     height: 90px;
     border-color: #FFFFFF;
+}
+.nav_hd a {
+    float: right;
+    font-size: 12px;
+    height: 35px;
+    width: 90px;
+    line-height: 35px;
+    /* list-style: none; */
+    text-decoration: none;
+    color: #b7b7b7;
+    text-align: center;
+}
+.nav_hd .language {
+    color: #fff;
+}
+.en {
+    background-color: #da251a;
+}
+.zh {
+    background-color: #90d31a;
 }
