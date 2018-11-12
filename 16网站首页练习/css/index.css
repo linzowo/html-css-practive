@@ -6,15 +6,19 @@
     margin: 0;
     padding: 0;
 }
+.nav_bd,
+.nav_hd {
+    width: 1425px;
+    margin: 0 auto;
+}
 
 /* 头部开始 */
+    /* 导航栏头部开始 */
 .nav_hd {
     height: 35px;
+    /* width: 1425px; */
     background-color: #113C62;
-}
-.nav_bd {
-    height: 90px;
-    border-color: #FFFFFF;
+    /* margin: 0 auto; */
 }
 .nav_hd a {
     float: right;
@@ -27,7 +31,14 @@
     color: #b7b7b7;
     text-align: center;
 }
-.nav_hd .language {
+.nav_hd_title {
+    width: 360px;
+    /* background-color: pink; */
+    overflow: hidden;
+    margin-right: 215px;
+    margin-left: auto;
+}
+.nav_hd_title .language {
     color: #fff;
 }
 .en {
@@ -35,4 +46,10 @@
 }
 .zh {
     background-color: #90d31a;
+}
+    /* 导航栏头部结束 */
+    /* 导航栏主体开始 */
+.nav_bd {
+    height: 90px;
+    border-color: #FFFFFF;
 }
