@@ -6,37 +6,35 @@
     margin: 0;
     padding: 0;
 }
-.nav_bd,
-.nav_hd {
-    width: 1425px;
+.nav_hd_title,
+.nav_bd {
+    width: 990px;   /* 版心宽度 */
     margin: 0 auto;
 }
 
 /* 头部开始 */
-    /* 导航栏头部开始 */
+/* 导航栏头部开始 */
 .nav_hd {
     height: 35px;
-    /* width: 1425px; */
     background-color: #113C62;
     /* margin: 0 auto; */
-}
-.nav_hd a {
-    float: right;
-    font-size: 12px;
-    height: 35px;
-    width: 90px;
-    line-height: 35px;
-    /* list-style: none; */
-    text-decoration: none;
-    color: #b7b7b7;
-    text-align: center;
+    /* width: 1425px; */
 }
 .nav_hd_title {
-    width: 360px;
+    overflow: hidden;       /* 清除浮动 */
+    margin: 0 auto;
     /* background-color: pink; */
-    overflow: hidden;
-    margin-right: 215px;
-    margin-left: auto;
+    /* margin-right: 0; */
+}
+.nav_hd a {
+    float: right;           /* 让所有连接靠右显示 */
+    font: 400 12px/35px "微软雅黑";
+    height: 35px;
+    width: 90px;
+    text-decoration: none;      /* 取消连接下划线 */
+    color: #b7b7b7;
+    text-align: center;
+    /* list-style: none; */
 }
 .nav_hd_title .language {
     color: #fff;
@@ -47,9 +45,84 @@
 .zh {
     background-color: #90d31a;
 }
-    /* 导航栏头部结束 */
-    /* 导航栏主体开始 */
+/* 导航栏头部结束 */
+/* 导航栏主体开始 */
 .nav_bd {
     height: 90px;
-    border-color: #FFFFFF;
+    background-color: #fff;
+    /* position: relative;         父相 */
+}
+.img {
+    /* position: absolute;         /* 子绝 
+    left: 0; */
+    float: left;
+    width: 163px;
+    height: 90px;
+    margin-right: 50px;
+    background: url(../images/logo.png) no-repeat 50% 50%;
+}
+.nav_bd_title {
+    width: 600px;
+    height: 90px;
+    float: left;
+    /* 
+    float: left;
+    height: 90px;
+    text-align: center;
+    line-height: 90px; */
+}
+.nav_bd_title a {
+    float: left;
+    height: 90px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    padding: 0 19px;
+    font: 700 14px/90px "微软雅黑";
+}
+.nav_bd_title a:hover {
+    color: #fff;
+    background-color: #005587;
+}
+/* 
+搜索栏效果：
+距离左侧标签文字20px
+有弧度
+放大镜图标距离盒子右侧10px
+内侧有1px左右阴影
+宽155px 12 10 133
+高30px
+ */
+.search {
+    float: right;
+    margin-right: 10px;
+    width: 153px;       /* 减去边框的宽度和高度 */
+    height: 28px;
+    border-style: none;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 1px solid #e2e2e3;
+    background-color: #fbfbfb;
+    overflow: hidden;   /* 合并外边距 */
+}
+.input_box {
+    height: 30px;
+    width: 128px;
+    border-style: none;
+    outline: none;          /* 取消在文本框输入时的边框 */
+    text-indent: 1em;
+    background-color: #fbfbfb;
+    /* box-shadow: 1px 1px 10px #e2e2e3 inset;     内部阴影 */
+}
+/* 导航栏主体结束 */
+/* banner开始 */
+/* 
+主图居中
+两侧箭头 宽度70 高110 背景 颜色 7f7f7f 透明度 
+位置 里边紧挨版心边缘
+中间
+*/
+.banner {
+    height: 545px;
+    background: #fff url(../images/banner.jpg) no-repeat 50% 0;
 }
