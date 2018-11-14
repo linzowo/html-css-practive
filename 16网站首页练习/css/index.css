@@ -126,3 +126,58 @@
     height: 545px;
     background: #fff url(../images/banner.jpg) no-repeat 50% 0;
 }
+.btn_box {
+    height: 545px;
+    width: 990px;
+    /* width: 1130px;      版心的宽度加上两边按钮的宽度 */
+    /* background-color: #fff; */
+    margin: 0 auto;
+    position: relative;     /* 父相 */
+}
+.br_right,
+.br_left {
+    width: 67px;
+    height: 111px;
+}
+.br_right {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: -70px;
+    top: 50%;
+    margin-top: -35px;
+}
+.br_right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.br_left {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: -70px;
+    top: 50%;
+    margin-top: -35px;
+}
+.br_left:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.br_link {
+    /* 
+    鼠标移动到上面的时候会有一个垂直向下的
+    2px
+    颜色为bd0000的阴影
+    距离版心50px
+    距离上面的文字40px
+     */
+    width: 94px;
+    height: 32px;
+    border-radius: 8px;
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    margin-top: 20px;
+    background: url(../images/br_link_img.png) no-repeat 50% 0;
+}
+.br_link:hover {
+    box-shadow: 0 2px 2px #bd0000;
+}
+/* banner结束 */
+/* 新闻资讯开始 */
