@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动门导航栏</title>
+    <style>
+    /* 初始化CSS */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .top {
+        /* 1.确定头部区域背景高度 */
+        height: 490px;
+        background: url(images/bgi.jpg) repeat-x;
+        padding-top: 10px;
+    }
+    /* 给版心 */
+    .bx {
+        width: 990px;
+        margin: 0 auto;
+    }
+    .logo img {
+        /* 2.修改logo大小及位置 */
+        width: 130px;
+        height: 44px;
+        float: left;
+        margin-right: 20px;
+    }
+    /* 3.调整第一个标签的位置 */
+    .nav ul {
+        float: left;
+    }
+    /* 4.去除li的小圆点 */
+    .nav li {
+        list-style: none;
+        float: left;
+        margin-right: 15px;
+    }
+    /* 5.去除a的下划线 改为白色 调整字体大小及行高 调整a的高度及背景 */
+    .nav a {
+        display: inline-block;
+        margin-top: 10px;
+        height: 33px;
+        padding-left: 15px;      /* 因为文字会把背景的边框压住必须让它移开 */
+        background: url(images/tu.png) no-repeat;
+        text-decoration: none;
+        color: #fff;
+        font: 14px/33px -apple-system-font,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei UI,Microsoft YaHei,Arial,sans-serif;
+    }
+    /* 6.添加滑动门效果 */
+    .nav span {
+        display: inline-block;      /* 行内元素默认是没有宽高的，必须要转换之后才有宽高 */
+        height: 33px;
+        padding-right: 15px;        /* 因为文字会压住右边的背景边框所以加一个内边距 */
+        background: url(images/tu.png) no-repeat right;
+    }
+    /* 7.添加鼠标经过时的变化效果 */
+    .nav a:hover {
+        background-image: url(images/ao.png);
+    }
+    .nav a:hover span {
+        background-image: url(images/ao.png);
+    }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="bx">
+            <!-- 1.确定结构 -->
+            <a href="#" class="logo"><img src="images/logo.png" alt="微信logo"  /></a>
+            <ul class="nav">
+                <li><a href="#"><span>首页</span></a></li>
+                <li><a href="#"><span>帮助与反馈</span></a></li>
+                <li><a href="#"><span>公众平台</span></a></li>
+                <li><a href="#"><span>开放平台</span></a></li>
+                <li><a href="#"><span>微信支付</span></a></li>
+                <li><a href="#"><span>微信网页版</span></a></li>
+                <li><a href="#"><span>表情开放平台</span></a></li>
+                <li><a href="#"><span>微信广告</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标样式练习</title>
+    <style>
+    li {
+        height: 100px;
+        width: 100px;
+        background-color: #ccc;
+        white-space: nowrap;        /* 文字不换行显示 */
+        overflow: hidden;           /* 隐藏超出文本框的文本 */
+        text-overflow: ellipsis;    /* 超出的文本省略号 */
+
+    }
+    textarea {
+        resize: none;   /* 取消文本域拖拽拉伸效果 */
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li style="cursor: default">白色箭头</li>
+        <li style="cursor: pointer">白色小手</li>
+        <li style="cursor: move">十字移动标</li>
+        <li style="cursor: text">文本编辑光标</li>
+        <li>超长文本长超长文本长超长文本长超长文本长超长文本长超长文本长超长文本长超长文本长超长文本长超长文本长超长文本长超长文本长 </li>
+    </ul>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+</body>
+</html>
