@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新元素标签</title>
+</head>
+<body>
+    <h1>常用的新标签包括以下内容</h1>
+    <!-- 头部 -->
+    <header>This is header</header>
+    <nav>This is nav</nav>
+    <footer>this is footer part</footer>
+    <aside>
+        <p>这是一个aside标签，它主要定义所在内容之外的内容，主要用于侧边</p>
+    </aside>
+    <!-- html5 文章定义标签 -->
+    <h2>this is article part</h2>
+    <article>
+        <!-- 他拥有一系列自身独特的属性需要使用的时候去w3school看 -->
+        <h1>这是标题</h1>
+        <section>this a section.</section>
+        <p>this is a paragraph</p>
+    </article>
+    <!-- 下拉列表标签 -->
+    <!-- 使用规范：
+    1.必须和input配合使用
+    2.list与ID的值必须对应
+    3.可以实现类似百度搜索栏中的输入下拉框效果 -->
+    <h2>this is datalist practice</h2>
+    <input list="cars" />
+    <datalist id="cars">
+        <option value="BMW">BMW</option>
+        <option value="AUDI">AUDI</option>
+        <option value="BENZ">BENZ</option>
+        <option value="AUTO">AUTO</option>
+    </datalist>
+    <h2>this a fieldset tabel</h2>
+    <fieldset>
+        <legend>用户登录</legend>
+        用户名: <input type="text"> <br />
+        密码: <input type="text"> <br />
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3盒子模型</title>
+    <style>
+    div {
+        width: 500px;
+        height: 500px;
+        background-color: pink;
+        margin: 100px auto;
+        padding: 100px;
+        border-right: 50px solid purple;
+        box-sizing: border-box;     /* 这是css3的盒子模型属性之一，添加了border-box属性后盒子不会被撑开，属于內减模式 */
+    }
+    </style>
+</head>
+<body>
+    <div>
+        这是我的盒子
+    </div>
+</body>
+</html>

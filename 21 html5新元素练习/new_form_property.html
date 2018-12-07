@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新表单属性练习</title>
+    <style>
+    form {
+        height: 500px;
+        width: 500px;
+        background-color: #ccc;
+        margin: 100px auto;
+    }
+    </style>
+</head>
+<body>
+    <form>
+        用户名：<input type="text" placeholder="请输入名称" autofocus /><br />
+        昵称：<input type="text" required accesskey="s"/> <br />       <!-- required属性添加后该文本框不能为空 accesskey属性使光标自动定位到输入框内 -->
+        上传头像：<input type="file" multiple /><br />      <!-- 上传文件，添加multiple属性后可以多选文件 -->
+        邮箱地址：<input type="email" /><br />
+        电话号码：<input type="tel"><br />
+        <input type="submit" />
+    </form>
+</body>
+</html>

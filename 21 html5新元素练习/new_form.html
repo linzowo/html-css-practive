@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增表单</title>
+    <style>
+    form {
+        width: 500px;
+        height: 1000px;
+        background-color: #ccc;
+        margin: 100px auto;
+    }
+    div dl {
+        overflow: hidden;
+    }
+    div dl dt,div dl dd {
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <!-- 以下表单的兼容性较差，如果是手机端可以使用，pc尽量不要使用 -->
+    <form action="">
+        <div>
+            <dl>
+                <dt>常住地：</dt>
+                <dd><input type="text" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>邮箱：</dt>
+                <dd><input type="email" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>电话：</dt>
+                <dd><input type="tel" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>网址：</dt>
+                <dd><input type="url" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>邮政编码：</dt>
+                <dd><input type="number" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>拖动滑块：</dt>
+                <dd><input type="range" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>时间：</dt>
+                <dd><input type="time" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>出生日期：</dt>
+                <dd><input type="date" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>时间：</dt>
+                <dd><input type="datetime" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>月份：</dt>
+                <dd><input type="month" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dt>星期：</dt>
+                <dd><input type="week" /></dd>
+                <dd>*填写之后不可变更</dd>
+            </dl>
+            <dl>
+                <dd><input type="submit" value="提交按钮" /></dd>
+                <dd><input type="reset" value="重置按钮"/></dd>
+            </dl>
+        </div>
+    </form>
+</body>
+</html>

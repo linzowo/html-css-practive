@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素选择器</title>
+    <style>
+    @font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?rrg3k2');
+    src:  url('fonts/icomoon.eot?rrg3k2#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?rrg3k2') format('truetype'),
+        url('fonts/icomoon.woff?rrg3k2') format('woff'),
+        url('fonts/icomoon.svg?rrg3k2#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+    div {
+        width: 300px;
+        height: 30px;
+        border: 1px solid #ccc;
+        margin: 100px auto;
+        line-height: 30px;
+        font-family: 'icomoon';
+        position: relative;
+    }
+    div:hover {
+        border: 1px solid red;
+    }
+    div::before {       /* 就是一个能插入元素的选择器 */
+        content: "\ea43";
+        position: absolute;
+        right: 10px;
+        height: 100%;
+        color: #ccc;
+        transition: all 0.5s;       /* 让盒子在0.5s内完成旋转，会有一种动画的效果 */
+    }
+    div:hover::before {
+        color: red;
+        transform: rotate(180deg);      /* 实现盒子旋转180度的效果 */
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

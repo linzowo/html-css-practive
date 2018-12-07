@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <style>
+    /* div[class] {
+        background-color: #e0e;
+    } */
+    /* div[class=demo] {
+        background-color: #e0e;
+    } */
+    /* div[class^=test] {
+        background-color: #e0e;
+    } */
+    /* div[class$=test] {
+        background-color: #e0e;
+    } */
+    div[class*=test] {
+        background-color: #e0e;
+    }
+    </style>
+</head>
+<body>
+    <div class="demo">死亡笔记</div>
+    <div class="demo1">死亡笔记</div>
+    <div>死亡笔记</div>
+    <div>死亡笔记</div>
+    <div>死亡笔记</div>
+    <div>死亡笔记</div>
+    <div class="test2">死亡笔记</div>
+    <div class="test_start">死亡笔记</div>
+    <div class="end_test">死亡笔记</div>
+</body>
+</html>
