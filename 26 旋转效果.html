@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转效果</title>
+    <style>
+    .father {
+        position: relative;
+    }
+    .father div {
+        width: 200px;
+        height: 200px;
+        transition: all 1s linear 0s;
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        margin-left: -100px;
+        transform-origin: left top;
+    }
+    .father div:nth-child(1) {
+        background-color: red;
+    }
+    .father div:nth-child(2) {
+        background-color: orange;
+    }
+    .father div:nth-child(3) {
+        background-color: yellow;
+    }
+    .father div:nth-child(4) {
+        background-color: green;
+    }
+    .father div:nth-child(5) {
+        background-color: cyan;
+    }
+    .father div:nth-child(6) {
+        background-color: blue;
+    }
+    .father:hover div:nth-child(6) {
+        transform: rotate(60deg)
+    }
+    .father:hover div:nth-child(5) {
+        transform: rotate(120deg)
+    }
+    .father:hover div:nth-child(4) {
+        transform: rotate(180deg)
+    }
+    .father:hover div:nth-child(3) {
+        transform: rotate(240deg)
+    }
+    .father:hover div:nth-child(2) {
+        transform: rotate(300deg)
+    }
+    .father:hover div:nth-child(1) {
+        transform: rotate(360deg)
+    }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
