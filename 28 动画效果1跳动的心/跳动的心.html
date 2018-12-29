@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跳动的心</title>
+    <style>
+    div {
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        /* animation: 动画名称 运行一次的时间 速度模式 多久之后开始 动画运行几次 是否逆向播放 是否播放 动画时间之外的状态； */
+        animation: jump 0.5s linear 1s infinite;
+    }
+    img {
+        width: 100%;
+    }
+    @keyframes jump {
+        0% {
+            transform: scale(1)
+        }
+        50% {
+            transform: scale(1.2)
+        }
+        100% {
+            transform: scale(1)
+        }
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="u=1126509887,1638281379&fm=26&gp=0.jpg" />
+    </div>
+</body>
+</html>
