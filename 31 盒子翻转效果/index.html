@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻转效果</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        width: 80%;
+        height: 500px;
+        border: 1px solid #000;
+        margin: 10px auto;
+        position: relative;
+    }
+    /* 甜甜圈翻转效果 */
+    .ttq span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 250px;
+        margin: -125px 0 0 -150px ;
+        /* animation: name duration动画世界 timing-function线性运行方式 delay何时开始 iteration-count循环次数 direction是否反方向运行 fill-mode; */
+        /* animation: turn 1s linear 1s 1;     运行一次的效果 */
+        animation: turn 1s linear 1s infinite;     /* 一直运行的效果 */
+        /* animation: turn 1s linear 1s 1 alternate;     加了翻转效果，效果不明显 */
+    }
+    .ttq span:nth-child(1) {
+        background: url(images/donutspinpic.png) no-repeat;
+        z-index: 5;
+        backface-visibility: hidden;
+    }
+    .ttq span:nth-child(2) {
+        background: url(images/donutspinpic.png) no-repeat -300px 0;
+    }
+    @keyframes turn {
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+    /* 咖啡杯翻转效果 */
+    .coffe span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 250px;
+        margin: -125px 0 0 -150px ;
+        /* background-color: #0ff;         */
+        /* animation: down 1s linear 1s 1; */
+    }
+    /* .coffe:hover span {
+        animation: down 1s linear 1s 1;
+    } */
+    .coffe span:nth-child(1) {
+        background: url(images/coffeepic.png) no-repeat;
+        z-index: 5;
+        backface-visibility: hidden;
+        animation: down 1s linear 1s 1;
+    }
+    .coffe span:nth-child(2) {
+        background: url(images/coffeepic.png) no-repeat right;
+        transform: rotateX(180deg);
+        animation: shale 1s linear 700ms 1;
+        /* backface-visibility: hidden; */
+        /* animation: down 1s linear 1s 1; */
+    }
+    @keyframes down {
+        to {
+            transform: rotateX(180deg);
+        }
+    }
+    @keyframes shale {
+        to {
+            /* transform: rotateX(-180deg); */
+            transform: translateY(200px)
+        }
+    }
+    /* 开门效果 */
+    .door span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -125px 0 0 -122.5px;
+        transform: perspective(600px) rotateY(45deg);
+        animation: open 4s infinite;
+    }
+    .door span:nth-child(1) {
+        width: 245px;
+        height: 250px;
+        z-index: 2;
+        /* background-color: pink; */
+        background: url(images/doorpic_r1_c1.png) no-repeat;
+        backface-visibility: hidden;
+    }
+    .door span:nth-child(2) {
+        width: 245px;
+        height: 250px;
+        z-index: 1;
+        background: url(images/doorpic_r1_c5.png) no-repeat;
+        /* background-color: orange; */
+    }
+    .door span:nth-child(3) {
+        width: 70px;
+        height: 82px;
+        z-index: 3;
+        background: url(images/doorpic_r2_c3.png) no-repeat;
+        margin: -80px 0 0 -36px;
+    }
+    @keyframes open {
+        50% {
+            transform: perspective(600px) rotateY(-140deg);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="ttq">
+        <!-- 图像沿y轴翻转之后，最开始在上面的盒子隐藏。 -->
+        <span></span>
+        <span></span>
+    </div>
+    <div class="coffe">
+        <!-- 盒子沿x轴翻转后盒子出现的效果 -->
+        <span></span>
+        <span></span>
+    </div>
+    <!-- 开门效果 -->
+    <div class="door">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

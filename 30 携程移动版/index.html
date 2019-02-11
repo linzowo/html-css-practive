@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>携程旅游手机版</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        background-color: #ccc;
+    }
+    body {
+        width: 540px;
+        margin: 0 auto;
+    }
+    li {
+        list-style: none;
+    }
+    .banner {
+        width: 100%;
+        position: relative;
+    }
+    .banner ul {
+        width: 100%;
+        height: 107.92px;
+    }
+    .banner li {
+        width: 100%;
+    }
+    .banner li a {
+        display: block;
+    }
+    .banner li img {
+        width: 100%;
+        height: auto;
+    }
+    .banner ol {
+        width: 300px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .banner ol li {
+        float: right;
+        width: 20px;
+        height: 20px;
+        /* background-color: rgb(255, 255, 255, 0.5); */
+        background-color: #fff;
+        margin: 0 5px;
+        border-radius: 50%;
+    }
+    nav {
+        width: 100%;
+        height: 65px;
+        padding: 5px;
+        margin: 5px 0;
+    }
+    nav ul {
+        overflow: hidden;
+        display: block;
+        padding: 3px 0;
+        height: 100%;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    nav li {
+        float: left;
+        width: 106px;
+        height: 50px;
+        text-align: center;
+        font-size: 14px;
+    }
+    nav li span:nth-child(1) {
+        display: block;
+        margin: 0 auto;
+        width: 32px;
+        height: 32px;
+        background: url(images/un_ico_localnav_v7.12@2x.png) no-repeat;
+        background-size: 32px auto;
+    }
+    main {
+        width: 100%;
+        /* padding: 5px; */
+        /* background-color: pink; */
+    }
+    .main-nav {
+        width: 100%;
+        border-radius: 10px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+        /* background: -webkit-linear-gradient(left, #fa5956 , #fa9b4d); */
+    .main-nav li {
+        flex: 1;
+        display: flex;
+        height: 88px;
+        /* margin: 1px 0; */
+        /* background: -webkit-linear-gradient(left, #fa5956 0%, #fa9b4d 100%);        从左向右渐变 */
+        /* background: -webkit-linear-gradient(#fa5956 0%, #fa9b4d 100%);      默认是从上向下渐变 */
+        /* background-color: orange; */
+        /* background: -webkit-linear-gradient(left top, red , blue); */
+    }
+    .main-nav li:nth-child(1) {
+        background: -webkit-linear-gradient(left, #fa5956 0%, #fa9b4d 100%);
+    }
+    .main-nav li:nth-child(2) {
+        background: -webkit-linear-gradient(left, #4b8fed 0%, #53bced 100%);
+        margin: 4px 0;
+    }
+    .main-nav li:nth-child(3) {
+        background: -webkit-linear-gradient(left, #34c2aa 0%, #6cd557 100%);
+    }
+    .main-nav li div {
+        flex: 1;
+        /* border-right:1px solid rgba(255, 255, 255, .8); */
+        border-right:1px solid #fff;
+        /* box-sizing: unset; */
+        overflow: hidden;
+    }
+    .main-nav li div:nth-child(3) {
+        border: 0px;
+    }
+    .main-nav div a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font: 400 14px "微软雅黑";
+        text-decoration: none;
+        color: #fff;
+        background: url(images/grid-nav-items-hotel.png) no-repeat center bottom;
+        background-size: 121px auto;
+    }
+    .main-nav a p {
+        padding: 11px 0;
+        text-shadow: 0 1px 1px rgba(0,0,0,.25);     /* 文字阴影效果，一般不使用，因为太消耗浏览器性能 */
+    }
+    .main-nav div:nth-child(2),
+    .main-nav div:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+    }
+    .main-nav div span {
+        flex: 1;
+        text-align: center;
+        font: 400 14px "微软雅黑";
+        color: #fff;
+        text-shadow: 0 1px 1px rgba(0,0,0,.25);
+        padding: 11px 0;
+    }
+    .main-nav div span:nth-child(1) {
+        border-bottom: 1px solid #fff;
+    }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="images/700p0z000000mm503F9D0_1536_307_25.jpg" />
+                </a>
+            </li>
+        </ul>
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <span></span>
+                <span>景点·玩乐</span>
+            </li>
+            <li>
+                <span></span>
+                <span>景点·玩乐</span>
+            </li>
+            <li>
+                <span></span>
+                <span>景点·玩乐</span>
+            </li>
+            <li>
+                <span></span>
+                <span>景点·玩乐</span>
+            </li>
+            <li>
+                <span></span>
+                <span>景点·玩乐</span>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <ul class="main-nav">
+            <li>
+                <div>
+                    <a href="#">
+                        <p>酒店</p>
+                    </a>
+                </div>
+                <div>
+                    <span>海外酒店</span>
+                    <span>特价酒店</span>
+                </div>
+                <div>
+                    <span>团购</span>
+                    <span>民宿 客栈</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="#">
+                        <p>酒店</p>
+                    </a>
+                </div>
+                <div>
+                    <span>海外酒店</span>
+                    <span>特价酒店</span>
+                </div>
+                <div>
+                    <span>团购</span>
+                    <span>民宿 客栈</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="#">
+                        <p>酒店</p>
+                    </a>
+                </div>
+                <div>
+                    <span>海外酒店</span>
+                    <span>特价酒店</span>
+                </div>
+                <div>
+                    <span>团购</span>
+                    <span>民宿 客栈</span>
+                </div>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
