@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>纯css实现轮播图效果</title>
+    <!-- 轮播图css -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* 图片基础样式 */
+      li {
+        list-style: none;
+        float: left;
+      }
+      ul img {
+        width: 1226px; /* 保证图片尺寸统一 */
+        height: auto;
+      }
+
+      /* 右 -》 左 移动轮播图 */
+      /* 基础样式 */
+      .container1 {
+        width: 1226px;
+        height: 460px;
+        margin: 50px auto 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .container1 ul {
+        background-color: rgb(152, 204, 39);
+        width: 600%; /* 确保能放下所有图片并排排列 */
+        overflow: hidden;
+      }
+
+      /* 动画效果实现 */
+
+      /* 图片动画效果 */
+      .container1 ul {
+        /* animation: imgMove 40s cubic-bezier(0,1.04,0,.99) 10s infinite; */
+        animation-name: imgMove;
+        animation-duration: 20s;
+        animation-timing-function: cubic-bezier(0, 1.04, 0, 0.99);
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+      }
+      .container1 ul:hover {
+        /* 鼠标进入就停止动画 */
+        /* animation-play-state: paused; */
+      }
+      @keyframes imgMove {
+        0% {
+          transform: translateX(0px);
+        }
+        25% {
+          transform: translateX(-1226px);
+        }
+        50% {
+          transform: translateX(-2452px);
+        }
+        75% {
+          transform: translateX(-3678px);
+        }
+        100% {
+          transform: translateX(-4904px);
+        }
+      }
+
+      /* 右 -》 左 移动轮播图 */
+
+      /* 渐变轮播图 */
+      /* 基础样式 */
+      .container2 {
+        width: 1226px;
+        height: 460px;
+        margin: 50px auto 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .container2 ul li {
+        position: absolute;
+        opacity: 0;
+
+        /* 动画设置 */
+        animation-name: fade;
+        animation-duration: 20s;
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes fade {
+        0% {
+          opacity: 0;
+          z-index: 0;
+        }
+        25% {
+          opacity: 1;
+          z-index: 1;
+        }
+        50% {
+          opacity: 0;
+          z-index: 0;
+        }
+      }
+
+      .container2 ul li:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .container2 ul li:nth-child(2) {
+        animation-delay: 5s;
+      }
+      .container2 ul li:nth-child(3) {
+        animation-delay: 10s;
+      }
+      .container2 ul li:nth-child(4) {
+        animation-delay: 15s;
+      }
+
+      /* 焦点样式与动画和上面的一致所以就写了 */
+
+      /* 渐变轮播图 */
+
+      /* 轮播焦点基础样式 */
+      ol {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -60px;
+        padding: 10px;
+        z-index: 999;
+      }
+      ol li {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin: 0 5px;
+        background-color: #fff;
+      }
+
+      /* 轮播焦点动画效果 */
+      ol li {
+        animation-name: focus;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      ol li:nth-child(1) {
+        animation-delay: 0s;
+      }
+      ol li:nth-child(2) {
+        animation-delay: 5s;
+      }
+      ol li:nth-child(3) {
+        animation-delay: 10s;
+      }
+      ol li:nth-child(4) {
+        animation-delay: 15s;
+      }
+      @keyframes focus {
+        5% {
+          background-color: #000;
+        }
+        15% {
+          background-color: #000;
+        }
+        50% {
+          background-color: #fff;
+        }
+      }
+      /* 轮播焦点动画效果 */
+    </style>
+  </head>
+  <body>
+    <div class="container1">
+      <!-- 轮播图结构 -->
+      <ul>
+        <li><img src="images/1.webp" alt="" /></li>
+        <li><img src="./images/2.webp" alt="" /></li>
+        <li><img src="./images/3.webp" alt="" /></li>
+        <li><img src="./images/4.webp" alt="" /></li>
+        <li><img src="images/1.webp" alt="" /></li>
+      </ul>
+      <!-- 轮播焦点结构 -->
+      <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+
+    <div class="container2">
+      <!-- 轮播图结构 -->
+      <ul>
+        <li><img src="images/1.webp" alt="" /></li>
+        <li><img src="./images/2.webp" alt="" /></li>
+        <li><img src="./images/3.webp" alt="" /></li>
+        <li><img src="./images/4.webp" alt="" /></li>
+      </ul>
+      <!-- 轮播焦点结构 -->
+      <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+  </body>
+</html>

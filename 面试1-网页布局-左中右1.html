@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>左右固定中间宽度自适应</title>
+  </head>
+  <body>
+    <!-- 
+        方案1：浮动布局：会脱离标准流，但不会脱离文档流。浮动是不完全的脱标，文字不会被压住。子盒子只是转换为了行内块，不会完全脱离标准流，所以会撑开父盒子；
+        在屏幕缩小到一定尺寸时内容会掉下去
+        
+    -->
+    <section class="layout float">
+      <style>
+        .layout.float {
+          /* height: 300px; */
+          background-color: #ccc;
+          width: 80%;
+          min-width: 650px; /* 防止因为屏幕尺寸缩小导致的问题，页面样式崩坏 */
+          margin: 0 auto;
+        }
+        /* .layout.float article, */
+        .layout.float article > div {
+          height: 300px;
+        }
+        .layout.float .left {
+          float: left;
+          width: 300px;
+          background-color: rgb(177, 209, 33);
+        }
+        .layout.float .right {
+          float: right;
+          width: 300px;
+          background-color: rgb(33, 209, 186);
+        }
+        .layout.float .center {
+          background-color: rgb(209, 33, 171);
+        }
+      </style>
+      <h1>浮动解决方案</h1>
+      <article>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center"><h2>这是浮动解决方案</h2></div>
+      </article>
+    </section>
+
+    <!-- 方案2： 定位布局：绝对定位完全脱标，无法撑开父盒子如果需要父盒子有宽高需要自行设置。子绝父相只是计算起始位置的作用，无法让相对定位的盒子被撑开，在屏幕缩小到一定尺寸时内容重叠 -->
+    <section class="layout absolute">
+      <style>
+        .layout.absolute {
+          position: relative;
+          width: 80%;
+          background-color: #ccc;
+          margin: 100px auto;
+          height: 350px;
+          min-width: 650px;
+        }
+        .layout.absolute article > div {
+          height: 300px;
+          position: absolute;
+        }
+        .layout.absolute .left {
+          left: 0;
+          width: 300px;
+          background-color: rgb(127, 207, 53);
+        }
+        .layout.absolute .right {
+          right: 0;
+          width: 300px;
+          background-color: rgb(189, 53, 207);
+        }
+        .layout.absolute .center {
+          left: 300px;
+          right: 300px;
+          background-color: rgba(53, 138, 207, 0.603);
+        }
+      </style>
+      <h1>定位布局方案</h1>
+      <article>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center">这是定位布局方案</div>
+      </article>
+    </section>
+
+    <!-- 方案3： flex定位布局：这种布局方式盒子不会脱离文档流，父盒子会被撑开,flex布局不会掉也不会重叠，但是添加了宽度的盒子也会随屏幕尺寸变化 -->
+    <section class="layout flex">
+      <style>
+        .layout.flex {
+          margin: 100px auto;
+          width: 80%;
+          /* height: 350px; */
+          background-color: #ccc;
+        }
+        .layout.flex article {
+          display: flex;
+        }
+        .layout.flex article > div {
+          height: 300px;
+        }
+        .layout.flex .left {
+          width: 300px;
+          background-color: rgb(127, 207, 53);
+        }
+        .layout.flex .right {
+          width: 300px;
+          background-color: rgb(189, 53, 207);
+        }
+        .layout.flex .center {
+          flex: 1;
+          background-color: rgba(53, 138, 207, 0.603);
+        }
+      </style>
+      <h1>flex布局方案</h1>
+      <article>
+        <div class="left"></div>
+        <div class="center">这是flex布局方案</div>
+        <div class="right"></div>
+      </article>
+    </section>
+
+    <!-- 方案4： table定位布局：这种布局方式盒子不会脱离文档流，父盒子会被撑开，与flex布局一样，但是添加了宽度的盒子也会随屏幕尺寸变化 -->
+    <section class="layout table">
+      <style>
+        .layout.table {
+          margin: 100px auto;
+          width: 80%;
+          /* height: 350px; */
+          background-color: #ccc;
+        }
+        .layout.table article {
+          display: table;
+          width: 100%; /* tabel布局父盒子不会自动变成与其父盒子一样宽，需要手动设置宽度为需要宽度 */
+        }
+        .layout.table article > div {
+          height: 300px;
+          display: table-cell;
+        }
+        .layout.table .left {
+          width: 300px; /* 如果不给宽度且盒子种没有内容宽度就会为0，如果每个盒子都有内容，就会自动等宽 */
+          background-color: rgb(127, 207, 53);
+        }
+        .layout.table .right {
+          width: 300px;
+          background-color: rgb(189, 53, 207);
+        }
+        .layout.table .center {
+          background-color: rgba(53, 138, 207, 0.603);
+        }
+      </style>
+      <h1>table布局方案</h1>
+      <article>
+        <div class="left"></div>
+        <div class="center">这是table布局方案</div>
+        <div class="right"></div>
+      </article>
+    </section>
+
+    <!-- 方案5： grid布局：不脱标会撑开盒子，盒子默认了宽度就不会随页面大小改变，父盒子会随页面大小改变,需要指定最小宽度 -->
+    <section class="layout grid">
+      <style>
+        .layout.grid {
+          margin: 100px auto;
+          width: 80%;
+          min-width: 650px;
+          background-color: #ccc;
+        }
+        .layout.grid article {
+          display: grid;
+          width: 100%;
+          grid-template-columns: 300px auto 300px;
+        }
+        .layout.grid article > div {
+          height: 300px;
+        }
+        .layout.grid .left {
+          background-color: rgb(127, 207, 53);
+        }
+        .layout.grid .right {
+          background-color: rgb(189, 53, 207);
+        }
+        .layout.grid .center {
+          background-color: rgba(53, 138, 207, 0.603);
+        }
+      </style>
+      <h1>grid布局方案</h1>
+      <article>
+        <div class="left"></div>
+        <div class="center">这是grid布局方案</div>
+        <div class="right"></div>
+      </article>
+    </section>
+  </body>
+</html>

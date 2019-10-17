@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-    div {
-        height: 80px;
-        background-color: #000;
-        /* text-align: center; */
-        overflow: hidden;
+   
+    .father{
+        position: relative;
+        width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: space-between;
     }
-    a {
-        float: left;
-        /* display: inline-block; */
-        width: 990px;
-        height: 60px;
-        background-color: pink;
-        margin: 10px auto;
+    .father div{
+        width: 40%;
+        height: 200px;
     }
-    div.hnk {
-        /* display: inline-block; */
-        height: 80px;
-        width: 960px;
-        background-color: pink;
-        margin: 0 auto;
+    .son1{
+        background-color: red;
+    }
+    .son2{
+        background-color: blue;
     }
     </style>
 </head>
@@ -31,5 +28,9 @@
     <div><a href="#"></a></div>
     <a href="#">123</a>
     <div class="hnk"></div>
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+    </div>
 </body>
 </html>
