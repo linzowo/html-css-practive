@@ -12,6 +12,11 @@
         padding: 0;
         box-sizing: border-box;
       }
+      h2 {
+        display: block;
+        /* margin: 0 auto; */
+        text-align: center;
+      }
       /* 图片基础样式 */
       li {
         list-style: none;
@@ -124,6 +129,50 @@
 
       /* 渐变轮播图 */
 
+      /* 背景改变轮播图 */
+      .container3 {
+        width: 1226px;
+        height: 460px;
+        margin: 50px auto 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .container3 .img-box {
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
+        background-image: url("https://m.qpic.cn/psb?/V11CA95048EY0H/.ubxWcpYNfZ8bxP.aX9Ft0Xw27Wt0TSqHy1nGwH8Sy4!/b/dMMAAAAAAAAA&bo=ygTMAQAAAAARBzM!&rf=viewer_4");
+      }
+
+      /* 动画设置 */
+      .container3 .img-box {
+        animation-name: changeBG;
+        animation-duration: 20s;
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        animation-iteration-count: infinite;
+        animation-delay: 5s;
+      }
+
+      @keyframes changeBG {
+        0% {
+          background-image: url("https://m.qpic.cn/psb?/V11CA95048EY0H/.ubxWcpYNfZ8bxP.aX9Ft0Xw27Wt0TSqHy1nGwH8Sy4!/b/dMMAAAAAAAAA&bo=ygTMAQAAAAARBzM!&rf=viewer_4");
+        }
+        25% {
+          background-image: url("http://m.qpic.cn/psb?/V11CA95048EY0H/A9GmTVHrY.6XNIzYWf2W3PlDayCm06kmNFpQ8uAZtgo!/b/dDYBAAAAAAAA&bo=ygTMAQAAAAARFyM!&rf=viewer_4");
+        }
+        50% {
+          background-image: url("http://m.qpic.cn/psb?/V11CA95048EY0H/qYq0ZCGjDUuwqpIKTuo57hr5wZ6kLls8NKgM*EX8nvw!/b/dFMBAAAAAAAA&bo=ygTMAQAAAAARFyM!&rf=viewer_4");
+        }
+        75% {
+          background-image: url("http://m.qpic.cn/psb?/V11CA95048EY0H/NsSF8XIJnFPPqWkqAQRjLQgtgTAlFvSkU7VulnfePkA!/b/dL8AAAAAAAAA&bo=ygTMAQAAAAARFyM!&rf=viewer_4");
+        }
+        100% {
+          background-image: url("https://m.qpic.cn/psb?/V11CA95048EY0H/.ubxWcpYNfZ8bxP.aX9Ft0Xw27Wt0TSqHy1nGwH8Sy4!/b/dMMAAAAAAAAA&bo=ygTMAQAAAAARBzM!&rf=viewer_4");
+        }
+      }
+
+      /* 背景改变轮播图 */
+
       /* 轮播焦点基础样式 */
       ol {
         position: absolute;
@@ -176,14 +225,41 @@
     </style>
   </head>
   <body>
+    <!-- 左右滑动式 -->
     <div class="container1">
+      <h2>左右滑动式</h2>
       <!-- 轮播图结构 -->
       <ul>
-        <li><img src="images/1.webp" alt="" /></li>
-        <li><img src="./images/2.webp" alt="" /></li>
-        <li><img src="./images/3.webp" alt="" /></li>
-        <li><img src="./images/4.webp" alt="" /></li>
-        <li><img src="images/1.webp" alt="" /></li>
+        <li>
+          <img
+            src="https://m.qpic.cn/psb?/V11CA95048EY0H/.ubxWcpYNfZ8bxP.aX9Ft0Xw27Wt0TSqHy1nGwH8Sy4!/b/dMMAAAAAAAAA&bo=ygTMAQAAAAARBzM!&rf=viewer_4"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="http://m.qpic.cn/psb?/V11CA95048EY0H/A9GmTVHrY.6XNIzYWf2W3PlDayCm06kmNFpQ8uAZtgo!/b/dDYBAAAAAAAA&bo=ygTMAQAAAAARFyM!&rf=viewer_4"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="http://m.qpic.cn/psb?/V11CA95048EY0H/qYq0ZCGjDUuwqpIKTuo57hr5wZ6kLls8NKgM*EX8nvw!/b/dFMBAAAAAAAA&bo=ygTMAQAAAAARFyM!&rf=viewer_4"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="http://m.qpic.cn/psb?/V11CA95048EY0H/NsSF8XIJnFPPqWkqAQRjLQgtgTAlFvSkU7VulnfePkA!/b/dL8AAAAAAAAA&bo=ygTMAQAAAAARFyM!&rf=viewer_4"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="https://m.qpic.cn/psb?/V11CA95048EY0H/.ubxWcpYNfZ8bxP.aX9Ft0Xw27Wt0TSqHy1nGwH8Sy4!/b/dMMAAAAAAAAA&bo=ygTMAQAAAAARBzM!&rf=viewer_4"
+            alt=""
+          />
+        </li>
       </ul>
       <!-- 轮播焦点结构 -->
       <ol>
@@ -194,14 +270,50 @@
       </ol>
     </div>
 
+    <!-- 渐变式 -->
     <div class="container2">
+      <h2>渐变式</h2>
       <!-- 轮播图结构 -->
       <ul>
-        <li><img src="images/1.webp" alt="" /></li>
-        <li><img src="./images/2.webp" alt="" /></li>
-        <li><img src="./images/3.webp" alt="" /></li>
-        <li><img src="./images/4.webp" alt="" /></li>
+        <li>
+          <img
+            src="https://m.qpic.cn/psb?/V11CA95048EY0H/.ubxWcpYNfZ8bxP.aX9Ft0Xw27Wt0TSqHy1nGwH8Sy4!/b/dMMAAAAAAAAA&bo=ygTMAQAAAAARBzM!&rf=viewer_4"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="http://m.qpic.cn/psb?/V11CA95048EY0H/A9GmTVHrY.6XNIzYWf2W3PlDayCm06kmNFpQ8uAZtgo!/b/dDYBAAAAAAAA&bo=ygTMAQAAAAARFyM!&rf=viewer_4"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="http://m.qpic.cn/psb?/V11CA95048EY0H/qYq0ZCGjDUuwqpIKTuo57hr5wZ6kLls8NKgM*EX8nvw!/b/dFMBAAAAAAAA&bo=ygTMAQAAAAARFyM!&rf=viewer_4"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="http://m.qpic.cn/psb?/V11CA95048EY0H/NsSF8XIJnFPPqWkqAQRjLQgtgTAlFvSkU7VulnfePkA!/b/dL8AAAAAAAAA&bo=ygTMAQAAAAARFyM!&rf=viewer_4"
+            alt=""
+          />
+        </li>
       </ul>
+      <!-- 轮播焦点结构 -->
+      <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+
+    <!-- 背景改变式 -->
+    <div class="container3">
+      <h2>背景改变式</h2>
+      <!-- 轮播图结构 -->
+      <div class="img-box"></div>
       <!-- 轮播焦点结构 -->
       <ol>
         <li></li>
