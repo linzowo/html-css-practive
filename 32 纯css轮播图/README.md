@@ -1,8 +1,8 @@
 # 纯css实现轮播图
 
-> 查看最终效果点击这里[演示demo]()
+> 查看最终效果点击这里[演示demo]( http://linzowo.ml/demo/css-slider.html )
 >
-> 查看源码点击这里[GitHub仓库链接]()
+> 查看源码点击这里[GitHub仓库链接]( [https://github.com/linzowo/JavaScript_practive/blob/master/32%20%E7%BA%AFcss%E8%BD%AE%E6%92%AD%E5%9B%BE/32%20%E7%BA%AFcss%E8%BD%AE%E6%92%AD%E5%9B%BE.html](https://github.com/linzowo/JavaScript_practive/blob/master/32 纯css轮播图/32 纯css轮播图.html) )
 
 ## 项目背景
 
